@@ -1,0 +1,24 @@
+{
+  "name": "ff-flow-theme",
+  "version": "1.0.0",
+  "description": "Considered tweaks to enhance the Firefox browsing experience",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/johnsonjzhou/ff-flow-theme.git"
+  },
+  "author": "Johnson Zhou (johnson@simplyuseful.io)",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^6.6.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "path": "^0.12.7",
+    "sass": "^1.49.7",
+    "sass-loader": "^12.5.0",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-remove-empty-scripts": "^0.7.3"
+  }
+}
