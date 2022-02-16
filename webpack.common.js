@@ -5,15 +5,6 @@ const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: {
-    'userChrome': [ './src/userChrome.scss' ]
-  },
-  output: {
-    path: path.resolve('./dist/'),
-    clean: true
-  },
-  mode: 'production',
-  devtool: 'source-map',
   module: {
     rules: [
       {

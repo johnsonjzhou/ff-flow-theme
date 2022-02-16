@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Considered tweaks to enhance the Firefox browsing experience",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build-dev": "webpack --config webpack.dev.js", 
+    "build-prod": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
     "sass-loader": "^12.5.0",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2",
+    "webpack-merge": "^5.8.0",
     "webpack-remove-empty-scripts": "^0.7.3"
   }
 }
