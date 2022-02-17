@@ -1,0 +1,24 @@
+/**
+ * @author  Johnson Zhou (johnson@simplyuseful.io)
+ */
+
+/* :::::: settables :::::: */
+
+$rounding-radius: 8px; // def 4px
+$standard-rounding: #{ $rounding-radius } !important;
+
+/* :::::: styles ::::::*/ 
+
+:root {
+  // tabs 
+  --tab-border-radius: #{ $standard-rounding };
+
+  // toolbar buttons 
+  --toolbarbutton-border-radius: #{ $standard-rounding };
+
+  // buttons within url bar
+  --urlbar-icon-border-radius: #{ $standard-rounding };
+
+  // overflow and hamburger menu 
+  --arrowpanel-border-radius: #{ $standard-rounding };
+}
