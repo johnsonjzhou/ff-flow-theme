@@ -5,7 +5,7 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   entry: {
-    'userChrome': [ './src/userChrome.scss' ]
+    'userChrome': [ './src/_build.scss' ]
   },
   output: {
     path: path.resolve('./dist/'),
