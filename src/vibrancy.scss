@@ -12,14 +12,7 @@ $hover-color-blend: 8%;
 /* :::::: mixins :::::: */
 
 @mixin vibrancy-enabler {
-  #navigator-toolbox {
-    background-color: hsla(0, 0%, 60%, 0.10) !important; 
-    // [default] background-color: window;
-
-    &:-moz-lwtheme-brighttext {
-      background-color: hsla(0, 0%, 0%, 0.10) !important; 
-    }
-  }
+  
 }
 
 @mixin vibrancy-styles {
@@ -35,7 +28,25 @@ $hover-color-blend: 8%;
 /* :::::: styles :::::: */
 
 @include macos-only($fullscreen) {
-  @include vibrancy-enabler;
+  #navigator-toolbox {
+    background-color: hsla(0, 0%, 60%, 0.10) !important; 
+    // [default] background-color: window;
+
+    &:-moz-lwtheme-brighttext {
+      background-color: hsla(0, 0%, 0%, 0.10) !important; 
+    }
+  }
+
+  &[privatebrowsingmode] {
+    #navigator-toolbox {
+      background-color: hsla(260, 100%, 60%, 0.25) !important; 
+      // [default] background-color: window;
+  
+      &:-moz-lwtheme-brighttext {
+        background-color: hsla(260, 100%, 40%, 0.25) !important; 
+      }
+    }
+  }
   
   #titlebar {
     @include vibrancy-styles;
