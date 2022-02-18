@@ -1,0 +1,126 @@
+-# A simplified translation of navigator-toolbox.inc.xhtml
+-# @author  Johnson Zhou (johnson@simplyuseful.io)
+-# 
+-# @see  /source/browser/base/content/navigator-toolbox.inc.xhtml
+
+%toolbox#navigator-toolbox
+
+  %vbox#titlebar
+
+    %toolbar#toolbar-menubar.browser-toolbar.chromeclass-menubar.titlebar-color
+
+    %toolbar#TabsToolbar
+
+      %hbox.titlebar-spacer {:type => 'pre-tabs'}
+
+      %hbox.toolbar-items
+        %hbox#TabsToolbar-customization-target {:flex => '1'}
+          %tabs#tabbrowser-tabs
+            %hbox.tab-drop-indicator
+            %arrowscrollbox#tabbrowser-arrowscrollbox
+              %tab.tabbrowser-tab
+              %toolbarbutton#tabs-newtab-button.toolbarbutton-1
+              %spacer.closing-tabs-spacer
+            %span#tabbrowser-tab-a11y-desc
+          %toolbarbutton#new-tab-button
+          %toolbarbutton##alltabs-button
+
+      %hbox.titlebar-spacer {:type => 'post-tabs'}
+
+      %button.accessibility-indicator
+
+      %hbox.private-browsing-indicator
+
+      %hbox.titlebar-buttonbox-container
+
+        %hbox.titlebar-buttonbox.titlebar-color
+          %toolbarbutton.titlebar-button.titlebar-min {:titlebar-btn => 'min'}
+          %toolbarbutton.titlebar-button.titlebar-max {:titlebar-btn => 'max'}
+          %toolbarbutton.titlebar-button.titlebar-restore {:titlebar-btn => 'max'}
+          %toolbarbutton.titlebar-button.titlebar-close {:titlebar-btn => 'close'}
+
+    -# close %toolbar#TabsToolbar
+
+    %toolbar#nav-bar.browser-toolbar
+
+      %toolbartabstop
+
+      %hbox#nav-bar-customization-target {:flex => '1'}
+
+        %toolbarbutton#back-button.toolbarbutton-1.chromeclass-toolbar-additional
+
+        %toolbarbutton#forward-button.toolbarbutton-1.chromeclass-toolbar-additional
+
+        %toolbaritem#stop-reload-button.chromeclass-toolbar-additional
+          %toolbarbutton#reload-button.toolbarbutton-1
+            %box.toolbarbutton-animatable-box
+              %image.toolbarbutton-animatable-image
+          %toolbarbutton#stop-button.toolbarbutton-1
+            %box.toolbarbutton-animatable-box
+              %image.toolbarbutton-animatable-image
+
+        %toolbarspring.chromeclass-toolbar-additional
+
+        %toolbaritem#urlbar-container.chromeclass-location {:flex => '400', :persist => 'width'}
+          %toolbartabstop
+          %hbox#urlbar {:flex => '1'}
+            %hbox#urlbar-background
+            %hbox#urlbar-input-container
+              %box#remote-control-box
+              %box#urlbar-search-button.chromeclass-toolbar-additional
+              %box#tracking-protection-icon-container
+                %box#tracking-protection-icon-box
+                  %image#tracking-protection-icon
+                %tooltip#tracking-protection-icon-tooltip
+              %box#identity-box
+                %box#identity-icon-box
+                  %image#identity-icon
+                  %label#identity-icon-label
+                %box#identity-permission-box
+                  %image#permissions-granted-icon
+                  %box#blocked-permissions-container
+              %box#notification-popup-box
+              %box#urlbar-label-box
+              %div#urlbar-search-mode-indicator
+              %moz-input-box.urlbar-input-box
+                -# ...
+              %image#urlbar-go-button
+              %hbox#page-action-buttons
+          %toolbartabstop
+        -# close %toolbaritem#urlbar-container
+
+        %toolbarspring.chromeclass-toolbar-additional
+
+        %toolbarbutton#downloads-button.toolbarbutton-1.chromeclass-toolbar-additional
+          -# ...
+        
+        %toolbarbutton#fxa-toolbar-menu-button.toolbarbutton-1.chromeclass-toolbar-additional
+      
+      -# close %hbox#nav-bar-customization-target
+
+      %toolbarbutton#nav-bar-overflow-button.toolbarbutton-1.chromeclass-toolbar-additional.overflow-button
+
+      %toolbaritem#PanelUI-button
+        %toolbarbutton#ion-button
+        %toolbarbutton#whats-new-menu-button
+        %toolbarbutton#PanelUI-menu-button
+
+    -# close %toolbar#nav-bar
+
+    %toolbar#PersonalToolbar.browser-toolbar.chromeclass-directories
+
+      %hbox#personal-toolbar-empty
+        %description#personal-toolbar-empty-description
+      
+      %toolbaritem#personal-bookmarks
+        -# ...
+
+    -# close %toolbar#PersonalToolbar
+
+    %template#tab-notification-deck-template
+      %named-deck#tab-notification-deck
+
+    %template#BrowserToolbarPalette
+      -# ...
+
+  -# close %vbox#titlebar
