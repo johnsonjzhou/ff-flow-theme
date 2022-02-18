@@ -2,9 +2,15 @@
  * @author  Johnson Zhou (johnson@simplyuseful.io)
  */
 
-@mixin macos-only {
+@mixin macos-only($fullscreen: false) {
   // @see /mozilla-central/source/browser/base/content/browser.xhtml
   html[data-l10n-id="browser-main-window-mac"] {
-    @content;
+    @if $fullscreen {
+      @content;
+    } @else {
+      &:not([inFullscreen]) {
+        @content;
+      }
+    }
   }
 }
