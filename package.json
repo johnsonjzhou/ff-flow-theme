@@ -1,6 +1,6 @@
 {
   "name": "ff-flow-theme",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Considered tweaks to enhance the Firefox browsing experience",
   "scripts": {
     "build-dev": "webpack --config webpack.dev.js", 
