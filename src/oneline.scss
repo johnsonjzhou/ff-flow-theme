@@ -1,0 +1,82 @@
+/**
+ * @author  Johnson Zhou (johnson@simplyuseful.io)
+ * 
+ * todo  fix: urlbar when active has full height of nav-bar
+ */
+@import './macos.scss';
+
+/* :::::: settables :::::: */
+
+$fullscreen: true;
+$min-screen-width: 1024px;
+$toolbar-height: 50px;
+$nav-width: 680px; 
+$urlbar-min-width: 280px;
+$window-control-width: 64px;
+$pre-tab-spacer: 6px;
+
+/* :::::: styles :::::: */
+
+@media screen and (min-width: #{$min-screen-width}) {
+  @include macos-only($fullscreen) {
+    // [default] --urlbar-min-height: 32px;
+    // [default:uidensity=compact] --urlbar-min-height: 26px;
+    // [default:uidensity=touch] --urlbar-min-height: 34px;
+    
+    &[inFullscreen] {
+      .titlebar-color {
+        // match to .browser-toolbar when in full screen to avoid contrast
+        background-color: var(--toolbar-bgcolor);
+        background-image: var(--toolbar-bgimage);
+      }
+    }
+  
+    #navigator-toolbox {
+      // [default] position: relative;
+  
+      #titlebar {
+  
+        #TabsToolbar {
+          margin-left: $nav-width;
+          height: $toolbar-height;
+          -moz-box-align: center;
+    
+          // breakout window control and vertically align
+          .titlebar-buttonbox-container {
+            position: absolute;
+            display: block;
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+          }
+  
+          .titlebar-spacer[type="pre-tabs"] {
+            width: $pre-tab-spacer !important;
+          }
+        }
+      }
+    
+      #nav-bar {
+        -moz-window-dragging: drag;
+        height: $toolbar-height;
+        margin-top: calc($toolbar-height * -1);
+        margin-right: calc( 100vw - $nav-width);
+        margin-bottom: 0;
+        margin-left: 0;
+  
+        #urlbar-container {
+          // [default] min-width: calc(350px + 24px + 2 * var(--toolbarbutton-inner-padding));
+          // [default:downloadsbuttonshown] min-width: 350px;
+          min-width: $urlbar-min-width !important;
+        }
+      }
+    }
+  }
+  
+  @include macos-only(false) {
+    #nav-bar {
+      padding-left: $window-control-width;
+    }
+  }
+}
