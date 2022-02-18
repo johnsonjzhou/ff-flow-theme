@@ -1,0 +1,49 @@
+/**
+ * @author  Johnson Zhou (johnson@simplyuseful.io)
+ */ 
+
+/* :::::: settables :::::: */
+
+$transition-duration: 0.3s;
+$transition-style: ease;
+
+/* :::::: mixins :::::: */
+
+@mixin transition($properties...) {
+  $transitions: ();
+  @each $property in $properties {
+    $transitions: append(
+      $transitions, ($property $transition-duration $transition-style), 
+      $separator: comma
+    );
+  }
+  transition: $transitions;
+}
+
+/* :::::: styles :::::: */
+
+.tabbrowser-tab {
+  .tab-stack {
+    .tab-background {
+      @include transition(background-color);
+    }
+  }
+}
+
+.tab-close-button {
+  // @see  /source/browser/base/content/tabbrowser-tab.js
+  // @see  /source/browser/themes/shared/preferences/preferences.inc.css
+  &.close-icon {
+    @include transition(background-color);
+  }
+}
+
+//@see  /source/browser/themes/shared/toolbarbuttons.inc.css
+.toolbarbutton {
+  &-1,
+  &-icon, 
+  &-text, 
+  &-badge-stack {
+    @include transition(background-color);
+  }
+}
