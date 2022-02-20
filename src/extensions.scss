@@ -1,0 +1,23 @@
+/**
+ * @author  Johnson Zhou (johnson@simplyuseful.io)
+ */ 
+
+// :::::: Multi-Account Containers :::::: //
+
+.tabbrowser-tab[usercontextid] {
+  > .tab-stack {
+    > .tab-background {
+      > .tab-context-line {
+        height: 16px !important;
+        border-radius: 6px !important;
+        margin: 0 !important;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 2px;
+        transform: translateY(-50%);
+        width: 3px;
+      }
+    }
+  }
+}
