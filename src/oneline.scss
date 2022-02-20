@@ -12,6 +12,8 @@ $min-screen-width: 1024px;
 $toolbar-height: 50px;
 $nav-width: 680px; 
 $urlbar-min-width: 280px;
+$urlbar-open-min-width: 600px;
+$urlbar-open-vertical-padding: 3px;
 $window-control-width: 64px;
 $pre-tab-spacer: 6px;
 
@@ -35,7 +37,6 @@ $pre-tab-spacer: 6px;
       // [default] position: relative;
   
       #titlebar {
-  
         #TabsToolbar {
           margin-left: $nav-width;
           height: $toolbar-height;
@@ -70,10 +71,28 @@ $pre-tab-spacer: 6px;
           // [default:downloadsbuttonshown] min-width: 350px;
           min-width: $urlbar-min-width !important;
         }
+
+        #urlbar {
+          &[breakout] {
+            transition: min-width 0.1s ease-out;
+    
+            &[breakout-extend] {
+              --breakout-height: calc(var(--urlbar-height) + (2 * #{$urlbar-open-vertical-padding}));
+              min-width: $urlbar-open-min-width !important;
+              top: calc((#{$toolbar-height} - var(--breakout-height)) / 2) !important;
+    
+              > #urlbar-input-container {
+                height: var(--breakout-height) !important;
+                padding-top: $urlbar-open-vertical-padding !important;
+                padding-bottom: $urlbar-open-vertical-padding !important;
+              }
+            }
+          }
+        }
       }
     }
   }
-  
+
   @include macos-only(false) {
     #nav-bar {
       padding-left: $window-control-width;
