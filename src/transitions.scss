@@ -17,7 +17,7 @@ $transition-style: ease;
       $separator: comma
     );
   }
-  transition: $transitions;
+  transition: $transitions !important;
 }
 
 /* :::::: styles :::::: */
