@@ -1,8 +1,12 @@
 /**
  * @author  Johnson Zhou (johnson@simplyuseful.io)
+ * 
+ * @note 
+ * -moz-lwtheme-brighttext is not working on FF100
  */
 
 @import './macos.scss';
+@import './darkmode.scss';
 
 /* :::::: settables :::::: */ 
 
@@ -17,9 +21,9 @@ $hover-color-blend: 8%;
 
 @mixin vibrancy-styles {
   -moz-appearance: -moz-mac-vibrant-titlebar-light !important;
-    -moz-font-smoothing-background-color: -moz-mac-vibrant-titlebar-light !important;
+  -moz-font-smoothing-background-color: -moz-mac-vibrant-titlebar-light !important;
   
-  &:-moz-lwtheme-brighttext {
+  @include darkmode() {
     -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
     -moz-font-smoothing-background-color: -moz-mac-vibrant-titlebar-dark !important;
   }
@@ -32,7 +36,7 @@ $hover-color-blend: 8%;
     background-color: hsla(0, 0%, 60%, 0.10) !important; 
     // [default] background-color: window;
 
-    &:-moz-lwtheme-brighttext {
+    @include darkmode() {
       background-color: hsla(0, 0%, 0%, 0.10) !important; 
     }
   }
@@ -42,7 +46,7 @@ $hover-color-blend: 8%;
       background-color: hsla(260, 100%, 60%, 0.25) !important; 
       // [default] background-color: window;
   
-      &:-moz-lwtheme-brighttext {
+      @include darkmode() {
         background-color: hsla(260, 100%, 40%, 0.25) !important; 
       }
     }
@@ -58,7 +62,7 @@ $hover-color-blend: 8%;
     // #urlbar-background color
     --toolbar-field-background-color: rgba(250, 250, 250, 0.8);
     // [default @ :root] rgb(240,240,244);
-    &:-moz-lwtheme-brighttext {
+    @include darkmode() {
       --toolbar-field-background-color: rgba(5, 5, 5, 0.4);
     }
   }
@@ -76,7 +80,7 @@ $hover-color-blend: 8%;
           box-shadow: 0.8px 0.8px 1px hsla(0, 0%, 60%, 0.35) !important;
         }
 
-        &:-moz-lwtheme-brighttext {
+        @include darkmode() {
           &[selected="true"] {
             box-shadow: 0.8px 0.8px 2px hsla(0, 0%, 10%, 0.90) !important;
           }
