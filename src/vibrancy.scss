@@ -20,12 +20,18 @@ $hover-color-blend: 8%;
 }
 
 @mixin vibrancy-styles {
+  // pre 103
   -moz-appearance: -moz-mac-vibrant-titlebar-light !important;
   -moz-font-smoothing-background-color: -moz-mac-vibrant-titlebar-light !important;
+  // 103
+  -moz-appearance: -moz-mac-source-list !important;
   
   @include darkmode() {
+    // pre 103
     -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
     -moz-font-smoothing-background-color: -moz-mac-vibrant-titlebar-dark !important;
+    // 103
+    -moz-appearance: -moz-mac-source-list !important;
   }
 }
 
