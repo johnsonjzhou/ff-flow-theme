@@ -9,7 +9,7 @@ Written from the ground up through references to Firefox source files at
 [searchfox.org](https://searchfox.org/). 
 Written in `scss` and compiled using `webpack`.  
 
-Tested on `Firefox 103.0`.  
+Tested on `Firefox 104.0`.  
 
 ### Note 
 As of Firefox version `100`, 
@@ -18,6 +18,9 @@ replaced by `@media` query.
 
 As of Firefox version `103`, 
 vibrancy on macOS now uses `-moz-appearance: -moz-mac-source-list`.  
+
+As of Firefox version `104`, 
+identification of macOS is now `browser-main-window-mac-window-titles`.  
 
 --- 
 ## Install  

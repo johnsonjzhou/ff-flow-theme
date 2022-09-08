@@ -4,7 +4,10 @@
 
 @mixin macos-only($fullscreen: false) {
   // @see /mozilla-central/source/browser/base/content/browser.xhtml
-  html[data-l10n-id="browser-main-window-mac"] {
+  // < FF104: browser-main-window-mac
+  // FF104: browser-main-window-mac-window-titles
+  html[data-l10n-id="browser-main-window-mac"],
+  html[data-l10n-id="browser-main-window-mac-window-titles"] {
     @if $fullscreen {
       @content;
     } @else {
