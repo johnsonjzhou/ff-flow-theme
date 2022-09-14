@@ -37,6 +37,8 @@ $pre-tab-spacer: 6px;
       // [default] position: relative;
   
       #titlebar {
+        position: relative;
+        
         #TabsToolbar {
           margin-left: $nav-width;
           height: $toolbar-height;
