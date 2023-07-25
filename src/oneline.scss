@@ -1,6 +1,6 @@
 /**
  * @author  Johnson Zhou (johnson@simplyuseful.io)
- * 
+ *
  * todo  fix: urlbar when active has full height of nav-bar
  */
 @import './macos.scss';
@@ -10,7 +10,7 @@
 $fullscreen: true;
 $min-screen-width: 1024px;
 $toolbar-height: 50px;
-$nav-width: 680px; 
+$nav-width: 680px;
 $urlbar-min-width: 280px;
 $urlbar-open-min-width: 600px;
 $urlbar-open-vertical-padding: 3px;
@@ -24,7 +24,7 @@ $pre-tab-spacer: 6px;
     // [default] --urlbar-min-height: 32px;
     // [default:uidensity=compact] --urlbar-min-height: 26px;
     // [default:uidensity=touch] --urlbar-min-height: 34px;
-    
+
     &[inFullscreen] {
       .titlebar-color {
         // match to .browser-toolbar when in full screen to avoid contrast
@@ -32,18 +32,23 @@ $pre-tab-spacer: 6px;
         background-image: var(--toolbar-bgimage);
       }
     }
-  
+
     #navigator-toolbox {
       // [default] position: relative;
-  
+
       #titlebar {
         position: relative;
-        
+
         #TabsToolbar {
           margin-left: $nav-width;
-          height: $toolbar-height;
           -moz-box-align: center;
-    
+
+          // Tab bar height
+          #TabsToolbar-customization-target {
+            height: $toolbar-height;
+            align-items: center;
+          }
+
           // breakout window control and vertically align
           .titlebar-buttonbox-container {
             position: absolute;
@@ -53,13 +58,13 @@ $pre-tab-spacer: 6px;
             transform: translateY(-50%);
             z-index: 3;
           }
-  
+
           .titlebar-spacer[type="pre-tabs"] {
             width: $pre-tab-spacer !important;
           }
         }
       }
-    
+
       #nav-bar {
         -moz-window-dragging: drag;
         height: $toolbar-height;
@@ -67,7 +72,7 @@ $pre-tab-spacer: 6px;
         margin-right: calc( 100vw - $nav-width);
         margin-bottom: 0;
         margin-left: 0;
-  
+
         #urlbar-container {
           // [default] min-width: calc(350px + 24px + 2 * var(--toolbarbutton-inner-padding));
           // [default:downloadsbuttonshown] min-width: 350px;
@@ -77,12 +82,12 @@ $pre-tab-spacer: 6px;
         #urlbar {
           &[breakout] {
             transition: min-width 0.1s ease-out;
-    
+
             &[breakout-extend] {
               --breakout-height: calc(var(--urlbar-height) + (2 * #{$urlbar-open-vertical-padding}));
               min-width: $urlbar-open-min-width !important;
               top: calc((#{$toolbar-height} - var(--breakout-height)) / 2) !important;
-    
+
               > #urlbar-input-container {
                 height: var(--breakout-height) !important;
                 padding-top: $urlbar-open-vertical-padding !important;
